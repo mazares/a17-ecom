@@ -1,0 +1,136 @@
+.app {
+  display: grid;
+  place-content: center;
+  place-items: center;
+  grid-template-rows: 1fr 0.5fr 10fr 0.5fr;
+  grid-template-columns: repeat(1, 1fr);
+  min-height: 100vh;
+  background: #222;
+  color: #ddd;
+}
+
+.header,
+.nav,
+.main,
+.footer {
+  border: 1px solid #ddd;
+}
+
+.header,
+.nav,
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  display: grid;
+  place-content: center;
+  place-items: center;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  align-content: stretch;
+}
+
+.card {
+  width: 50%;
+  height: 5rem;
+}
+
+/* smaller than 320px */
+
+@media screen and (max-width: 320px) {
+  .app {
+    height: 100dvh;
+    height: 100vh;
+    grid-template-rows: 1fr 0.5fr 10fr 0.5fr;
+    font-size: smaller;
+  }
+  .header,
+  .nav,
+  .main,
+  .footer {
+    width: 90vw;
+    height: 98%;
+  }
+  .main {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+/* mobile */
+
+@media screen and (min-width: 320px) {
+  .app {
+    height: 100dvh;
+    height: 100vh;
+    grid-template-rows: 1fr 0.5fr 10fr 0.5fr;
+    font-size: smaller;
+  }
+  .header,
+  .nav,
+  .main,
+  .footer {
+    width: 90vw;
+    height: 98%;
+  }
+  .main {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+/* tablet */
+
+@media screen and (min-width: 768px) {
+  .app {
+    height: 100dvh;
+    grid-template-rows: 1fr 0.5fr 10fr 0.5fr;
+    font-size: medium;
+  }
+  .header,
+  .nav,
+  .main,
+  .footer {
+    width: 70vw;
+    height: 98%;
+  }
+  .main {
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+/* large screens */
+
+@media screen and (min-width: 1024px) {
+  .app {
+    height: 100vh;
+    grid-template-rows: 1fr 0.5fr 10fr 0.5fr;
+    font-size: large;
+  }
+  .header,
+  .nav,
+  .main,
+  .footer {
+    width: 60vw;
+    height: 98%;
+  }
+  .main {
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
